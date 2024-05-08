@@ -1,0 +1,27 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload File</title>
+</head>
+
+<body>
+    <h1>Upload File</h1>
+    <form action="/sign" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" id="file">
+        <input type="submit" value="Sign">
+    </form>
+
+    <br>
+    <!-- Add a form to include file and signature data for verification -->
+    <form action="/verify" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" id="file">
+        <input type="hidden" name="signature" value="{{ signature }}">
+        <input type="submit" value="Verify Signature">
+    </form>
+</body>
+
+</html>
